@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout principal de BluetoothAlarm.
+    Copia este archivo a: res/layout/activity_main.xml
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#0D0D0D">
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔵 Monitor Bluetooth"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="8dp"/>
+
+    <!-- Estado actual -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado: Inactivo"
+        android:textColor="#FF4444"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:paddingBottom="16dp"/>
+
+    <!-- Botón escanear dispositivos emparejados -->
+    <Button
+        android:id="@+id/btnScanPaired"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📡 Buscar Dispositivos Emparejados"
+        android:backgroundTint="#1565C0"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Lista de dispositivos -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Toca un dispositivo para registrarlo o configurarlo:"
+        android:textColor="#AAAAAA"
+        android:textSize="12sp"
+        android:paddingBottom="4dp"/>
+
+    <ListView
+        android:id="@+id/listDevices"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#1A1A1A"
+        android:divider="#333333"
+        android:dividerHeight="1dp"/>
+
+    <!-- Controles del servicio -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="12dp">
+
+        <Button
+            android:id="@+id/btnStartMonitor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="▶ Iniciar Monitor"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFFFFF"
+            android:layout_marginEnd="4dp"/>
+
+        <Button
+            android:id="@+id/btnStopMonitor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="⏹ Detener"
+            android:backgroundTint="#C62828"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Nota informativa -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ℹ La app debe tener permiso de 'Mostrar sobre otras apps' para bloquear la pantalla táctil."
+        android:textColor="#888888"
+        android:textSize="11sp"
+        android:paddingTop="8dp"
+        android:gravity="center"/>
+
+</LinearLayout>

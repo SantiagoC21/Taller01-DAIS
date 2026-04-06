@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQ_BLUETOOTH_PERMS = 100;
     private static final int REQ_OVERLAY_PERM    = 101;
 
+
     // ─── Componentes de UI ────────────────────────────────────────────────────
     private ListView   listDevices;
     private Button     btnScanPaired;

@@ -4,16 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.tarea_1"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.tarea_1"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -30,13 +26,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
     implementation(libs.appcompat)
+    implementation("androidx.biometric:biometric:1.1.0")
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)

@@ -25,12 +25,15 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.example.tarea_1.MainActivity;
+import com.example.tarea_1.activity.BiometricActivity;
 
 /**
  * Servicio en primer plano que:
@@ -46,6 +49,8 @@ public class AlarmService extends Service {
 
     public static final String ACTION_START_ALARM   = "com.example.tarea_1.START_ALARM";
     public static final String ACTION_STOP_ALARM    = "com.example.tarea_1.STOP_ALARM";
+    public static final String ACTION_HIDE_OVERLAY  = "com.example.tarea_1.HIDE_OVERLAY";
+    public static final String ACTION_SHOW_OVERLAY  = "com.example.tarea_1.SHOW_OVERLAY";
     public static final String EXTRA_DEVICE_NAME    = "extra_device_name";
     public static final String EXTRA_DEVICE_MAC     = "extra_device_mac";
     public static final String EXTRA_ALARM_DURATION = "extra_alarm_duration";
@@ -87,6 +92,16 @@ public class AlarmService extends Service {
 
         if (ACTION_STOP_ALARM.equals(intent.getAction())) {
             stopAlarm();
+            return START_NOT_STICKY;
+        }
+
+        if (ACTION_HIDE_OVERLAY.equals(intent.getAction())) {
+            hideOverlay();
+            return START_NOT_STICKY;
+        }
+
+        if (ACTION_SHOW_OVERLAY.equals(intent.getAction())) {
+            showTouchBlockerOverlay();
             return START_NOT_STICKY;
         }
 
@@ -230,20 +245,39 @@ public class AlarmService extends Service {
             return;
         }
 
-        overlayView = new View(this) {
-            @Override
-            public boolean onTouchEvent(MotionEvent event) {
-                return true; // Absorbe todos los toques
-            }
-        };
-        overlayView.setBackgroundColor(0xCC000000);
+        // Layout principal vertical
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setGravity(Gravity.CENTER);
+        layout.setBackgroundColor(0xCC000000);
 
+        // Texto de alerta
         TextView label = new TextView(this);
-        label.setText("ALARMA BLUETOOTH ACTIVA\nDispositivo desconectado\nEspere...");
+        label.setText("⚠️ ALARMA BLUETOOTH ACTIVA\n\nDispositivo desconectado");
         label.setTextColor(0xFFFF4444);
-        label.setTextSize(20f);
+        label.setTextSize(22f);
         label.setGravity(Gravity.CENTER);
-        label.setPadding(40, 40, 40, 40);
+        label.setPadding(40, 40, 40, 60);
+        layout.addView(label);
+
+        // Botón para desbloquear con huella
+        Button btnUnlock = new Button(this);
+        btnUnlock.setText("🔓 Desbloquear con huella");
+        btnUnlock.setTextSize(16f);
+        btnUnlock.setPadding(60, 30, 60, 30);
+        btnUnlock.setOnClickListener(v -> launchBiometricAuth());
+        layout.addView(btnUnlock);
+
+        // Texto informativo
+        TextView infoLabel = new TextView(this);
+        infoLabel.setText("\nLa alarma se detendrá automáticamente\no usa tu huella para desactivarla");
+        infoLabel.setTextColor(0xAAFFFFFF);
+        infoLabel.setTextSize(14f);
+        infoLabel.setGravity(Gravity.CENTER);
+        infoLabel.setPadding(40, 20, 40, 40);
+        layout.addView(infoLabel);
+
+        overlayView = layout;
 
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
             WindowManager.LayoutParams.MATCH_PARENT,
@@ -260,9 +294,36 @@ public class AlarmService extends Service {
 
         try {
             windowManager.addView(overlayView, params);
-            Log.d(TAG, "Overlay bloqueador añadido");
+            Log.d(TAG, "Overlay con botón de huella añadido");
         } catch (Exception e) {
             Log.e(TAG, "Error al añadir overlay: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Lanza la actividad de autenticación biométrica.
+     * Primero oculta el overlay para que el diálogo biométrico sea visible.
+     */
+    private void launchBiometricAuth() {
+        Log.d(TAG, "Lanzando autenticación biométrica");
+        // Ocultar overlay para permitir interacción con el diálogo biométrico
+        hideOverlay();
+        
+        Intent biometricIntent = new Intent(this, BiometricActivity.class);
+        biometricIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(biometricIntent);
+    }
+
+    /**
+     * Oculta el overlay temporalmente.
+     */
+    private void hideOverlay() {
+        if (overlayView != null && windowManager != null) {
+            try {
+                windowManager.removeView(overlayView);
+                Log.d(TAG, "Overlay ocultado temporalmente");
+            } catch (Exception ignored) {}
+            overlayView = null;
         }
     }
 

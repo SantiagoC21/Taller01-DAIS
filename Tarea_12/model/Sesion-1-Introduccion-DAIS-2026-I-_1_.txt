@@ -1,0 +1,319 @@
+“Ciencia y Tecnología al Servicio del País”
+   Facultad de Ingeniería Industrial y
+              de Sistemas
+Curso: Desarrollo Adaptativo e Integrado de Software.
+
+Docente: Carlos Ramos Montes
+
+                       2026-II
+    INTRODUCCIÓN AL
+DESARROLLO ADAPTATIVO E
+ INTEGRADO DE SOFTWARE
+                               Agenda
+➢ Sistemas Integrados.
+   ➢   Definición
+   ➢   Características
+   ➢   Tipos de sistemas integrados
+➢ Sistemas Adaptativos
+   ➢   Conceptos de adaptabilidad en software.
+   ➢   Características
+   ➢   Tipos
+➢ Ejemplos
+SISTEMAS INTEGRADOS
+                                     SISTEMAS INTEGRADOS
+
+
+                         ¿Qué son?
+    Sistema informático especializado que se encuentra
+   embebido dentro de un dispositivo, con el propósito de
+       controlar y gestionar sus funciones específicas.
+El principal objetivo de un sistema integrado es realizar una
+tarea o conjunto de tareas de manera eficiente, confiable y
+                        en tiempo real.
+                                      SISTEMAS INTEGRADOS - TIPOS
+
+➢ Sistemas embebidos a tiempo real
+  ➢ Responden a eventos externos en un tiempo predecible y garantizado.
+    Ejemplo: aplicaciones criticas como:
+    - Control de procesos industriales,
+    - Dispositivos médicos
+    - Sistemas de aviónica.
+➢ Sistemas embebidos de propósito general
+  ➢ Realizan tareas menos críticas en tiempo real y tienen mayor flexibilidad en
+    términos de funcionalidad.
+    Ejemplo:
+    - Entrenamiento en automóviles.
+    - Electrodomésticos inteligentes.
+    - Dispositivos de consumo electrónico.
+                                   SISTEMAS INTEGRADOS - TIPOS
+
+➢ Sistemas embebidos de red
+  ➢ Conectados a una red y pueden comunicarse con otros
+    dispositivos o sistemas.
+    Ejemplo: aplicaciones como:
+    - Internet de las cosas (IoT),
+    - Automatización del hogar y
+    - Redes de sensores.
+                                SISTEMAS INTEGRADOS - CARACTERISTICAS
+
+
+➢ Función específica: Diseñados para realizar una tarea o conjunto de tareas específicas.
+➢ Recursos limitados: Operan con restricciones de memoria, procesamiento y energía.
+➢ Tiempo Real: Capacidad de responder a eventos externos en un tiempo predecible.
+➢ Confiabilidad: Deben ser altamente confiables, ya que a menudo se utilizan en aplicaciones
+    críticas.
+➢ Eficiencia: Optimizados para funcionar de manera eficiente dentro de sus limitaciones de
+    recursos.
+➢ Integración hardware-software: El hardware y el software están estrechamente
+    acoplados y co-diseñados.
+                                                             SISTEMAS INTEGRADOS
+
+                                            Ejemplo
+➢ Sistema de control de motores de automóviles.
+   ✓   Sensores: El sistema recopila datos de varios sensores, como la posición del acelerador, la
+       temperatura del motor, la presión del aire y la velocidad del vehículo.
+   ✓   Unidad de control electrónico (ECU): La ECU es el "cerebro" del sistema, que procesa los
+       datos de los sensores y ejecuta algoritmos de control complejos.
+   ✓   Actuadores: La ECU envía señales a los actuadores, como los inyectores de combustible, las
+       bobinas de encendido y la válvula de control de aire, para ajustar el funcionamiento del motor
+       en tiempo real.
+   ✓   Comunicación: El sistema de control del motor también se comunica con otros sistemas del
+       vehículo, como la transmisión, el sistema de frenos y el sistema de control de estabilidad, para
+       coordinar su funcionamiento.
+                                                    SISTEMAS INTEGRADOS
+
+                                      Ejemplo
+➢   Marcapasos cardíaco:
+    ➢   Descripción: Dispositivo médico implantable que regula el ritmo cardíaco
+        mediante impulsos eléctricos.
+    ➢   Componentes: Batería, electrodos, microcontrolador, sensores de actividad
+        cardíaca.
+    ➢   Restricciones: Tamaño reducido, bajo consumo de energía, biocompatibilidad,
+        alta confiabilidad (funcionamiento continuo durante años).
+    ➢   Desafíos: Diseño de algoritmos de detección y estimulación cardíaca, gestión de la
+        energía de la batería, comunicación inalámbrica con dispositivos externos para
+        programación y monitoreo.
+    ➢   Beneficios: Mejora la calidad de vida de pacientes con problemas cardíacos,
+        reduce el riesgo de complicaciones.
+                                                             SISTEMAS INTEGRADOS
+
+                                            Ejemplo
+➢   Sistema de control de crucero en un automóvil:
+    ➢   Descripción: Sistema que mantiene la velocidad del vehículo constante sin necesidad de que
+        el conductor pise el acelerador.
+    ➢   Componentes: Sensores de velocidad, acelerómetro, unidad de control electrónico (ECU),
+        actuador del acelerador.
+    ➢   Restricciones: Tiempo real (respuesta rápida a cambios en la velocidad), confiabilidad (evitar
+        aceleraciones o frenadas bruscas).
+    ➢   Desafíos: Calibración precisa de los sensores, manejo de diferentes condiciones de la
+        carretera, integración con otros sistemas del vehículo (frenos, transmisión).
+    ➢   Beneficios: Mayor comodidad y seguridad en la conducción, ahorro de combustible.
+                                                      SISTEMAS INTEGRADOS
+
+                                       Ejemplo
+➢   Sistema de riego automatizado:
+    ➢   Descripción: Sistema que controla el riego de jardines o cultivos de forma
+        automática, basándose en sensores de humedad del suelo y programación horaria.
+    ➢   Componentes: Sensores de humedad, válvulas de riego, microcontrolador, panel
+        de control o aplicación móvil.
+    ➢   Restricciones: Bajo consumo de energía (funcionamiento con baterías o energía
+        solar), resistencia a la intemperie, facilidad de uso.
+    ➢   Desafíos: Calibración de los sensores de humedad, gestión eficiente del agua,
+        adaptación a diferentes tipos de plantas y condiciones climáticas.
+    ➢   Beneficios: Ahorro de agua, optimización del riego, mayor productividad en
+        cultivos.
+                                                             SISTEMAS INTEGRADOS
+
+                                            Ejemplo
+➢   Robot aspirador:
+    ➢   Descripción: Robot autónomo que limpia suelos de forma automática, evitando obstáculos y
+        recargando su batería cuando es necesario.
+    ➢   Componentes: Sensores de proximidad, sensores de suciedad, motores, batería,
+        microcontrolador, sistema de navegación.
+    ➢   Restricciones: Tamaño compacto, autonomía de la batería, capacidad de limpieza efectiva,
+        facilidad de uso y mantenimiento.
+    ➢   Desafíos: Desarrollo de algoritmos de navegación y evitación de obstáculos, detección y
+        limpieza de diferentes tipos de suciedad, interacción segura con personas y mascotas.
+    ➢   Beneficios: Ahorro de tiempo y esfuerzo en la limpieza del hogar, mejora de la higiene.
+SISTEMAS ADAPTATIVOS
+                                    SISTEMA ADAPTATIVO
+                                               ¿Qué son?
+
+Software adaptativo es un tipo de software diseñado para
+ ajustarse y adaptarse automáticamente a cambios en su
+entorno, necesidades del usuario o condiciones operativas
+  sin necesidad de intervención manual o reconfiguración
+                        significativa.
+                                                     SISTEMA ADAPTATIVO
+                                                             Características
+
+Flexibilidad:
+El software puede ajustarse automáticamente a diferentes entornos,
+configuraciones de hardware, o requisitos operativos. Por ejemplo, puede
+cambiar su comportamiento dependiendo de si se está ejecutando en un
+dispositivo móvil con batería limitada o en un servidor con recursos abundantes.
+Resiliencia:
+Capacidad para manejar y adaptarse a fallos o cambios inesperados en el
+entorno, como la pérdida de conectividad de red, fluctuaciones en la carga de
+trabajo, o variaciones en la disponibilidad de recursos.
+                                          .
+                                                      SISTEMA ADAPTATIVO
+                                                              Características
+
+Personalización Dinámica:
+El software puede adaptar su funcionalidad o interfaz según las preferencias o
+comportamientos del usuario. Esto puede incluir desde cambios en la
+disposición de la interfaz de usuario hasta la modificación de funcionalidades
+para optimizar la experiencia del usuario.
+Optimización Continua:
+El software monitorea continuamente su entorno y ajusta sus parámetros
+operativos para maximizar la eficiencia y el rendimiento. Esto podría incluir
+ajustes en el uso de memoria, la carga del procesador, o la priorización de tareas.
+                                         .
+                                                   SISTEMA ADAPTATIVO
+                                                           Características
+
+
+Modularidad:
+El software adaptativo suele estar construido en módulos independientes, lo
+que permite que partes específicas del sistema se actualicen, reemplacen o
+ajusten sin afectar al sistema en su totalidad.
+Automatización:
+La capacidad de tomar decisiones automáticamente sobre la base de los
+cambios detectados en el entorno, sin necesidad de intervención humana.
+                                           .
+                                                     SISTEMA ADAPTATIVO
+                                                                   Tipos
+
+               Auto-adaptativo (Self-Adaptive Software)
+Características:
+➢ Este tipo de software tiene la capacidad de modificar su comportamiento en
+   respuesta a cambios en su entorno o en sus propios estados internos sin
+   intervención humana.
+➢ Utiliza mecanismos de monitoreo y retroalimentación para ajustarse a nuevas
+   condiciones en tiempo real.
+Ejemplos:
+➢ Sistemas de gestión de energía en dispositivos móviles que ajustan
+   automáticamente la configuración para prolongar la vida de la batería.
+➢ Aplicaciones web que ajustan su interfaz y funcionalidad en función de la
+   conexión de red o el dispositivo utilizado.
+                                                          SISTEMA ADAPTATIVO
+                                                                        Tipos
+
+                              Adaptación Dinámica
+Características:
+➢ Se adapta en tiempo real a cambios en las condiciones operativas, como la
+   disponibilidad de recursos del sistema, la carga de trabajo, o el estado de la red.
+➢ A menudo se utiliza en sistemas críticos donde la estabilidad y la respuesta
+   rápida son esenciales.
+Ejemplos:
+➢ Aplicaciones de streaming como Netflix, que ajustan la calidad del video según el
+   ancho de banda disponible.
+➢ Sistemas de control de tráfico aéreo que se ajustan dinámicamente a las
+   condiciones meteorológicas y al tráfico aéreo cambiante.
+                                                         SISTEMA ADAPTATIVO
+                                                                       Tipos
+
+                           Adaptación Contextual
+Características:
+➢ Este software adapta su funcionalidad o interfaz en función del contexto del
+   usuario, como la ubicación geográfica, la hora del día, o el comportamiento del
+   usuario.
+➢ Se utiliza ampliamente en aplicaciones móviles y de IoT.
+Ejemplos:
+➢ Aplicaciones móviles que cambian de tema entre modo claro y oscuro según la
+   hora del día.
+➢ Sistemas de navegación que ajustan las rutas en función de las condiciones
+   actuales del tráfico y las preferencias del usuario.
+                                                         SISTEMA ADAPTATIVO
+                                                                       Tipos
+
+                       Adaptación Basada en Reglas
+Características:
+➢ La adaptación se realiza siguiendo un conjunto predefinido de reglas o
+   políticas que determinan cómo debe comportarse el software bajo diferentes
+   condiciones.
+➢ Este enfoque es más estático, ya que las reglas se definen antes de la
+   implementación del software.
+Ejemplos:
+➢ Sistemas de gestión de derechos digitales (DRM) que modifican el acceso al
+   contenido en función de la ubicación del usuario y las políticas de derechos de
+   autor.
+➢ Software de seguridad que cambia las políticas de acceso según las reglas
+   predefinidas cuando se detectan amenazas potenciales.
+                                                   SOFTWARE ADAPTATIVO
+                                                                  Tipos
+
+                     Adaptación Basada en el Usuario
+Características:
+➢ Este tipo de software adapta su comportamiento según las preferencias,
+   historial o necesidades específicas del usuario.
+➢ A menudo, utiliza algoritmos de aprendizaje automático para prever las
+   necesidades del usuario y ajustar su funcionalidad en consecuencia.
+Ejemplos:
+➢ Recomendación de contenido en plataformas como YouTube o Spotify, que
+   sugieren videos o canciones en función del historial del usuario.
+➢ Aplicaciones de productividad que personalizan las sugerencias y recordatorios
+   según el uso anterior y los patrones de trabajo del usuario.
+                                                     SOFTWARE ADAPTATIVO
+                                                                    Tipos
+
+                           Adaptación Proactiva
+Características:
+➢ A diferencia del software reactivo, que responde a cambios después de que
+   ocurren, el software proactivo intenta predecir futuros cambios en el entorno
+   y se adapta anticipadamente.
+➢ Utiliza modelos predictivos y análisis de datos para prever necesidades
+   futuras y adaptar su comportamiento en consecuencia.
+Ejemplos:
+➢ Sistemas de gestión de recursos en centros de datos que ajustan
+   dinámicamente la asignación de recursos antes de que se produzcan picos de
+   carga.
+➢ Aplicaciones de salud que ajustan las recomendaciones de actividad física en
+   función de las predicciones del estado de salud del usuario.
+                                                      SOFTWARE ADAPTATIVO
+                                                                     Tipos
+
+     Adaptación Basado en Modelos (Model-Driven Adaptation)
+Características:
+   • Utiliza modelos explícitos para guiar la adaptación. Estos modelos describen
+     diferentes configuraciones del software y las condiciones bajo las cuales
+     deben aplicarse.
+   • Permite una adaptación más estructurada y comprensible, adecuada para
+     sistemas complejos.
+Ejemplos:
+   • Sistemas de software utilizados en la simulación y modelado de fenómenos
+     físicos que adaptan su comportamiento según el modelo subyacente.
+   • Arquitecturas de software donde los componentes se reorganizan
+     dinámicamente según las condiciones modeladas.
+.
+                                                          SISTEMA ADAPTATIVO
+                                                                        Tipos
+
+                                   Ejemplos
+Sistemas Operativos Móviles (como Android o iOS):
+Estos sistemas pueden ajustar automáticamente la calidad de gráficos, el uso de
+recursos y la conectividad de red según la capacidad del dispositivo y el estado de
+la batería.
+Aplicaciones de Streaming (como Netflix o YouTube):
+Ajustan automáticamente la calidad del video en función del ancho de banda
+disponible, asegurando una experiencia de usuario fluida sin interrupciones.
+Sistemas de Gestión de Energía en Dispositivos Portátiles:
+Adaptan el consumo de energía en tiempo real, reduciendo el uso de energía
+para prolongar la duración de la batería en condiciones de carga alta o baja
+disponibilidad de energía.
+                                                        SISTEMA ADAPTATIVO
+                                                                      Tipos
+
+                                  Ejemplos
+Sistemas de Control en Automóviles:
+Sistemas como los frenos antibloqueo (ABS) o los sistemas de control de
+estabilidad adaptan su comportamiento según las condiciones de la carretera, la
+velocidad del vehículo, y las acciones del conductor para mantener la seguridad y
+el rendimiento.
+Software de Seguridad Informática:
+Programas como antivirus y firewalls adaptativos ajustan sus estrategias de
+defensa en función de las amenazas detectadas en tiempo real, optimizando la
+seguridad sin comprometer el rendimiento.
+¡MUCHAS GRACIAS!
+
